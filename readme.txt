@@ -1,6 +1,6 @@
 === Featured Content ===
 Contributors: grandslambert.com
-Donate link: http://example.com/
+Donate link: http://plugins.grandslambert.com/plugins/featured-content/donate.html
 Tags: content
 Requires at least: 3.0
 Tested up to: 3.0.3
@@ -21,6 +21,7 @@ Features:
 * Supports post thumbnails and automatically adds support in themes that do not support featured images.
 * Feature content in your sidebars with widgets that can open new pages or modal windows.
 * Uses the "Read More" capability in WordPress to display partial text in modal windows.
+* Ability to hide the post being displayed in sidebar widgets.
 * Uses the Modalbox library, included with the plugin.
 
 == Installation ==
@@ -42,7 +43,9 @@ Support for this plugin is handled on our support forum at http://support.grands
 
 == Screenshots ==
 
-1. An example of the modal windows created by this plugin.
+1. An example of the modal windows created by this plugin
+2. An example of using the short code on a post to display 6 images.
+3. An example of the widget using the featured images.
 
 == Changelog ==
 
