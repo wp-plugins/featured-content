@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* Featured Content CSS Document for Administration */
+
+/**
+ * This file can not be moved to your theme folder - it is used only for the
+ * administration screens.
+*/
+
+ul#featured_content_tabs {
+     border-bottom:1px solid #A2B6CB;
+     font-family:Verdana,Arial;
+     font-size:12px;
+     font-weight:bold;
+     list-style-type:none;
+     margin-bottom:12px;
+     padding-bottom:28px;
+     z-index:1;
+}
+
+#featured_content_tabs li {
+     background-color: #EBEBEB;
+     border: 1px solid #A2B6CB;
+     float: left;
+     height: 25px;
+     margin: 2px 0px 0px 5px;
+}
+
+#featured_content_tabs li a {
+     color: #666;
+     display: block;
+     float: right;
+     padding: 5px;
+     text-decoration: none;
+}
+
+#featured_content_tabs li.featured-content-selected {
+     background-color: #A2B6CB;
+}
+
+#featured_content_tabs li.featured-content-selected a{
+     color: #fff;
+}
+
+.form-table th {
+     width: 150px !important;
+}
+
+#icon-featured-content {
+     background: transparent url(../images/featured.png) no-repeat scroll;
+}
+
+div.overDiv {
+     border: 1px solid #666666;
+     padding: 8px;
+     background: #EBEBEB;
+     font-size: 12px;
+}
+
+input.number {
+     width: 25px;
+     text-align: right;
+}
+
+input.longtext {
+     width: 250px;
+     text-align: left;
+}
+
+input.shorttext {
+     width: 100px;
+     text-align: left;
+}
+
+input.zipcode {
+     width: 50px;
+}
+
+th.meta-label {
+     width: 125px;
+     text-align: right;
+     padding-right: 5px;
+}
+
+/* Post Boxes */
+#poststuff .inside {
+     margin: 0;
+}
+.event-details, .event-date, .cp-table tr {
+     border-bottom: solid 1px #ddd;
+     padding: 5px;
+}
+.event-details label, .event-date label {
+     font-weight: bold;
+}
+.no-border {
+     border:none !important;
+}
+
+.grey {
+     background: #ebebeb;
+     margin: 0;
+     padding: 3px;
+     font-size: 14px;
+     font-weight: bold;
+}
+
+.form-table td.cp-wide-table {
+     margin:0;
+     padding:0;
+}

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* Featured Content CSS Document */
+
+/**
+ * This file can be moved to your theme folder and modified to suit your site.
+ * Copy into a folder named "featured-content" within your theme.
+*/
+
+#modal_container {
+     margin: 8px;
+}
+
+#modal_content {
+     color: #333333;
+     font-size: 16px;
+     line-height: 24px;
+}
+.modal-window {
+     width: inherit;
+}
+
+.alignright {
+     float: right;
+     margin: 0 0 8px 10px;
+}
+
+.close-text {
+     text-align: center;
+     color: darkred;
+     cursor: pointer;
+}
+
+.attachment-featured-content-thumb {
+     margin: 2px 0;
+     cursor: pointer;
+}
+
+img.featured-content-shortcode-image {
+     margin: 0;
+     border: solid 1px #666;
+     float: left;
+}
