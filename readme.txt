@@ -44,8 +44,8 @@ Support for this plugin is handled on our support forum at http://support.grands
 == Screenshots ==
 
 1. An example of the modal windows created by this plugin
-2. An example of using the short code on a post to display 6 images.
-3. An example of the widget using the featured images.
+1. An example of using the short code on a post to display 6 images.
+1. An example of the widget using the featured images.
 
 == Changelog ==
 
