@@ -1,9 +1,12 @@
-@charset "UTF-8";
-/* Featured Content CSS Document for Administration */
-
 /**
- * This file can not be moved to your theme folder - it is used only for the
- * administration screens.
+ * featured-content-admin.css - stylesheet for administration pages.
+ *
+ * @package Featured Content
+ * @subpackage includes
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
 */
 
 ul#featured_content_tabs {

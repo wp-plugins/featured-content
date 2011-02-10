@@ -8,14 +8,15 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @package Featured Content
  * @subpackage includes
  * @author GrandSlambert
- * @copyright 2009-2010
+ * @copyright 2009-2011
  * @access public
+ * @since 0.1
  */
 ?>
 
 <div class="postbox">
      <h3 class="handl" style="margin:0;padding:3px;cursor:default;">
-<?php _e('Administration', 'featured-content'); ?>
+          <?php _e('Administration', 'featured-content'); ?>
      </h3>
      <div class="table">
           <table class="form-table cp-table">

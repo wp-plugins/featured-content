@@ -1,9 +1,12 @@
-@charset "UTF-8";
-/* Featured Content CSS Document */
-
 /**
- * This file can be moved to your theme folder and modified to suit your site.
- * Copy into a folder named "featured-content" within your theme.
+ * featured-content.css - Stylesheet for the front side of the site.
+ *
+ * @package Featured Content
+ * @subpackage templates
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
 */
 
 #modal_container {

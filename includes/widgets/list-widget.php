@@ -10,8 +10,9 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @package Featured Content
  * @subpackage includes/widgets
  * @author GrandSlambert
- * @copyright 2009-2010
+ * @copyright 2009-2011
  * @access public
+ * @since 0.1
  */
 class FeaturedContentListWidget extends WP_Widget {
 
@@ -29,7 +30,7 @@ class FeaturedContentListWidget extends WP_Widget {
           $this->WP_Widget('featured_content_list_widget', __('Featured Content &raquo; List', 'featured-content'), $widget_ops);
 
           $this->pluginPath = $featuredContentPlugin->pluginPath;
-          $this->options = $featuredContentPlugin->loadSettings();
+          $this->options = $featuredContentPlugin->load_settings();
      }
 
      function defaults($args = array()) {
@@ -53,7 +54,7 @@ class FeaturedContentListWidget extends WP_Widget {
       */
      function widget($args, $instance) {
           global $featuredContentPlugin;
-          
+
           if ( isset($instance['error']) && $instance['error'] ) {
                return;
           }

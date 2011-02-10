@@ -1,7 +1,7 @@
 === Featured Content ===
-Contributors: grandslambert.com
-Donate link: http://plugins.grandslambert.com/plugins/featured-content/donate.html
-Tags: content
+Contributors: grandslambert
+Donate link: http://plugins.grandslambert.com/featured-content-donate
+Tags: content, sidebar, widget, featured image, modal window
 Requires at least: 3.0
 Tested up to: 3.0.3
 Stable tag: trunk
@@ -49,10 +49,18 @@ Support for this plugin is handled on our support forum at http://support.grands
 
 == Changelog ==
 
+= 0.2 =
+* Fixed some code that was causing formatting issues on some themes.
+* Renamed several functions to avoid conflicts with other plugins.
+* Cleaned up code and added more comments.
+
 = 0.1 =
 * Initial release
 
 == Upgrade Notice ==
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+= 0.2 =
+Update if you are having issues with sidebars breaking on your theme.
+
+= 0.1 =
+First release - not really needed.

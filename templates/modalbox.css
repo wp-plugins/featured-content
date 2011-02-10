@@ -1,13 +1,13 @@
-/*
-   modalbox.css
-   
-   Modalbox project
-   
-   Created by Andrew Okonetchnikov.
-   Copyright 2006-2010 okonet.ru. All rights reserved.
-   
-   Licensed under MIT license.
-*/
+/**
+ * modalbox.css - Custom stylesheet for the modal box plugin.
+ *
+ * @package Featured Content
+ * @subpackage templates
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
+ */
 
 #MB_overlay {
 	position: absolute;

@@ -1,10 +1,17 @@
 <?php
 
+if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
+     die('You are not allowed to call this page directly.');
+}
 /**
- * The Template for displaying featured posts images in a shortcode.
+ * featured-shortcode-images.php - Template for shortcode with iamges.
  *
  * @package Featured Content
  * @subpackage templates
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
  */
 if ( count($features) ) {
      foreach ( $features as $feature ) {

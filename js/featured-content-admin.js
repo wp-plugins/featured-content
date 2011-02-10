@@ -1,3 +1,14 @@
+/**
+ * featured-shortcode-admin.js - Javascript for the administration screens.
+ *
+ * @package Featured Content
+ * @subpackage js
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
+ */
+
 /* Function to change tabs on the settings pages */
 function featured_content_show_tab(tab) {
      /* Close Active Tab */

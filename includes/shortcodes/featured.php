@@ -10,8 +10,9 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @package Featured Content
  * @subpackage includes/shortcodes
  * @author GrandSlambert
- * @copyright 2009-2010
+ * @copyright 2009-2011
  * @access public
+ * @since 0.1
  */
 function featured_content_shortcode($atts) {
      global $featuredContentPlugin, $post;
@@ -34,5 +35,5 @@ function featured_content_shortcode($atts) {
 
      $features = get_posts($options);
 
-     include($featuredContentPlugin->getTemplate('featured-shortcode-' . $type));
+     include($featuredContentPlugin->get_template('featured-shortcode-' . $type));
 }

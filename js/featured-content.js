@@ -1,7 +1,10 @@
 /**
- * Javascript for Featured Content Plugin.
+ * featured-contetn.js - Placeholder for future javascript.
  *
- * Added by Featured Content Plugin.
+ * @package Featured Content
+ * @subpackage js
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
  */
-
-

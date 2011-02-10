@@ -10,8 +10,9 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @package Featured Content
  * @subpackage includes
  * @author GrandSlambert
- * @copyright 2009-2010
+ * @copyright 2009-2011
  * @access public
+ * @since 0.1
  */
 class featuredContentPlugin_Init {
 
@@ -63,6 +64,7 @@ class featuredContentPlugin_Init {
                'rewrite' => false,
                'capability_type' => 'post',
                'hierarchical' => true,
+               'description' => __('Post type created by Featured Content plugin.', 'calendar-press'),
                'menu_position' => 5,
                'menu_icon' => $this->options['menu-icon'],
                'supports' => array('title', 'editor', 'author', 'excerpt'),
@@ -288,4 +290,5 @@ class featuredContentPlugin_Init {
      function init_metaboxes() {
           /* None at this time */
      }
+
 }

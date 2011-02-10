@@ -8,8 +8,9 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @package Featured Content
  * @subpackage includes/widgets
  * @author GrandSlambert
- * @copyright 2009-2010
+ * @copyright 2009-2011
  * @access public
+ * @since 0.1
  */
 ?>
 

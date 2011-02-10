@@ -5,13 +5,13 @@
   Plugin URI: http://plugins.grandslambert.com/plugins/featured-content.html
   Description: Creates an area to manage "featured content" that can be displayed throughout the web site, in widgets, and with theme functions.
   Author: GrandSlambert
-  Version: 0.0.1
+  Version: 0.2
   Author: GrandSlambert
   Author URI: http://www.grandslambert.com/
 
  * *************************************************************************
 
-  Copyright (C) 2010 GrandSlambert
+  Copyright (C) 2010-2011 GrandSlambert
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General License as published by
@@ -35,11 +35,14 @@ class featuredContentPlugin {
 
      var $menuName = 'featured-content-plugin';
      var $pluginName = 'Featured Content';
-     var $version = '0.1.0';
+     var $version = '0.2';
      var $optionsName = 'featured-content-options';
      var $xmlURL = 'http://grandslambert.com/xml/featured-content/';
      var $makeLink = false;
 
+     /**
+      * Initiate the plugin
+      */
      function featuredContentPlugin() {
           /* Load Langague Files */
           $langDir = dirname(plugin_basename(__FILE__)) . '/lang';
@@ -49,16 +52,16 @@ class featuredContentPlugin {
           $this->pluginName = __('Featured Content Plugin', 'featured-content');
           $this->pluginPath = WP_PLUGIN_DIR . '/' . basename(dirname(__FILE__));
           $this->pluginURL = WP_PLUGIN_URL . '/' . basename(dirname(__FILE__));
-          $this->loadSettings();
+          $this->load_settings();
 
           /* Add Actions and Filters */
           add_action('wp_loaded', array(&$this, 'wp_loaded'));
           add_action('wp_print_styles', array(&$this, 'print_styles'));
           add_action('wp_print_scripts', array(&$this, 'print_scripts'));
-          add_action('admin_menu', array(&$this, 'addAdminPages'));
-          add_filter('plugin_action_links', array(&$this, 'addConfigureLink'), 10, 2);
+          add_action('admin_menu', array(&$this, 'admin_menu'));
+          add_filter('plugin_action_links', array(&$this, 'plugin_action_links'), 10, 2);
           add_action('admin_init', array(&$this, 'admin_init'));
-          add_filter('whitelist_options', array(&$this, 'whitelistOptions'));
+          add_filter('whitelist_options', array(&$this, 'whitelist_options'));
           add_action('update_option_' . $this->optionsName, array(&$this, 'update_option'), 10);
           add_action('query_vars', array(&$this, 'query_vars'));
           add_action('template_redirect', array(&$this, 'template_redirect'));
@@ -74,7 +77,12 @@ class featuredContentPlugin {
           $init = new featuredContentPlugin_Init($this->options);
      }
 
-     function loadSettings() {
+     /**
+      * Load the plugin options.
+      *
+      * @return array
+      */
+     function load_settings() {
           $options = get_option($this->optionsName);
 
           $defaults = array(
@@ -140,7 +148,7 @@ class featuredContentPlugin {
       *
       * @global string $wp_version
       */
-     function addAdminPages() {
+     function admin_menu() {
           global $wp_version, $wpdb;
 
           $pages = array();
@@ -161,12 +169,12 @@ class featuredContentPlugin {
      /**
       * Add a configuration link to the plugins list.
       *
-      * @staticvar <object> $this_plugin
-      * @param <array> $links
-      * @param <array> $file
-      * @return <array>
+      * @staticvar object $this_plugin
+      * @param array $links
+      * @param array $file
+      * @return array
       */
-     function addConfigureLink($links, $file) {
+     function plugin_action_links($links, $file) {
           static $this_plugin;
 
           if ( !$this_plugin ) {
@@ -233,12 +241,15 @@ class featuredContentPlugin {
       * Register styles and scripts to load on web site.
       */
      function wp_loaded() {
-          wp_register_style('featuredContentCSS', $this->getTemplate('featured-content', '.css', 'url'));
-          wp_register_style('featuredContentMBCSS', $this->getTemplate('modalbox', '.css', 'url'));
+          wp_register_style('featuredContentCSS', $this->get_template('featured-content', '.css', 'url'));
+          wp_register_style('featuredContentMBCSS', $this->get_template('modalbox', '.css', 'url'));
           wp_register_script('featuredContentJS', $this->pluginURL . '/js/featured-content.js');
           wp_register_script('featuredcontentMB', $this->pluginURL . '/js/modalbox/modalbox.js', array('prototype', 'scriptaculous'));
      }
 
+     /**
+      * Print the styles needed on the front end.
+      */
      function print_styles() {
           wp_enqueue_style('featuredContentCSS');
           wp_enqueue_style('featuredContentMBCSS');
@@ -261,11 +272,17 @@ class featuredContentPlugin {
           wp_register_script('featuredContentAdminJS', $this->pluginURL . '/js/featured-content-admin.js');
      }
 
+     /**
+      * Print the stylesheets needed in the admin.
+      */
      function admin_styles() {
           wp_enqueue_style('featuredContentAdminCSS');
           $this->print_styles();
      }
 
+     /**
+      * Print the scripts neededin the admin.
+      */
      function admin_scripts() {
           wp_enqueue_script('featuredContentAdminJS');
           $this->print_scripts();
@@ -277,7 +294,7 @@ class featuredContentPlugin {
       * @param array $whitelist
       * @return array
       */
-     function whitelistOptions($whitelist) {
+     function whitelist_options($whitelist) {
           if ( is_array($whitelist) ) {
                $option_array = array($this->pluginName => $this->optionsName);
                $whitelist = array_merge($whitelist, $option_array);
@@ -310,7 +327,7 @@ class featuredContentPlugin {
 
      /**
       * Check on update option to see if we need to reset the options.
-      * @param <array> $input
+      * @param array $input
       * @return <boolean>
       */
      function update_option($input) {
@@ -343,7 +360,7 @@ class featuredContentPlugin {
           }
 
           if ( $post->post_type == 'feature' and isset($wp_query->query_vars['modal']) ) {
-               include($this->getTemplate('single-feature-modal'));
+               include($this->get_template('single-feature-modal'));
                exit;
           }
      }
@@ -354,7 +371,7 @@ class featuredContentPlugin {
       * @param <string> $template    The name of the template.
       * @return <string>             The full path to the template file.
       */
-     function getTemplate($template = NULL, $ext = '.php', $type = 'path') {
+     function get_template($template = NULL, $ext = '.php', $type = 'path') {
           if ( $template == NULL )
                return false;
 
@@ -429,8 +446,8 @@ class featuredContentPlugin {
 
           $xml_parser = xml_parser_create();
           xml_parser_set_option($xml_parser, XML_OPTION_CASE_FOLDING, true);
-          xml_set_element_handler($xml_parser, array($this, "startElement"), array($this, "endElement"));
-          xml_set_character_data_handler($xml_parser, array($this, "characterData"));
+          xml_set_element_handler($xml_parser, array($this, "start_element"), array($this, "end_element"));
+          xml_set_character_data_handler($xml_parser, array($this, "character_data"));
 
           if ( !($fp = @fopen($this->xmlURL . $type . '.xml', "r")) ) {
                /* translators: Message displayed when the contributors list cannot be accessed. */
@@ -450,7 +467,7 @@ class featuredContentPlugin {
           echo '</ul>';
      }
 
-     function startElement($parser, $name, $attrs) {
+     function start_element($parser, $name, $attrs) {
           if ( $name == 'NAME' ) {
                echo '<li class="rp-contributor">';
           } elseif ( $name == 'ITEM' ) {
@@ -463,7 +480,7 @@ class featuredContentPlugin {
           }
      }
 
-     function endElement($parser, $name) {
+     function end_element($parser, $name) {
           if ( $name == 'ITEM' ) {
                echo '</li>';
           } elseif ( $name == 'ITEM' ) {
@@ -471,9 +488,11 @@ class featuredContentPlugin {
           } elseif ( in_array($name, $this->showFields) ) {
                echo ', ';
           }
+
+          $this->makeLink = false;
      }
 
-     function characterData($parser, $data) {
+     function character_data($parser, $data) {
           if ( $this->makeLink ) {
                echo '<a href="http://' . $data . '" target="_blank">' . $data . '</a>';
                $this->makeLink = false;

@@ -1,23 +1,29 @@
 <?php
+if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
+     die('You are not allowed to call this page directly.');
+}
 /**
- * The Template for displaying featured posts images in a shortcode.
+ * featured-shortcode-text.php - Template for shortcode with text.
  *
  * @package Featured Content
  * @subpackage templates
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
  */
-if ( count($features) ) :
 ?>
+
+<?php if ( count($features) ) : ?>
      <ul class="featured-content-shortcode-list">
 
-     <?php
-     foreach ( $features as $feature ) {
-     ?>
+     <?php foreach ( $features as $feature ) : ?>
 
           <li class="featured-content-shortcode-item">
                <a href="<?php echo get_post_permalink($feature); ?>"><?php echo $feature->post_title; ?></a><br>
-<?php echo $featuredContentPlugin->trim_excerpt($feature->post_content, $words); ?>
+          <?php echo $featuredContentPlugin->trim_excerpt($feature->post_content, $words); ?>
      </li>
 
-<?php } ?>
-</ul>
+     <?php endforeach; ?>
+     </ul>
 <?php endif; ?>

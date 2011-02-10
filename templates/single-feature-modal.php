@@ -1,10 +1,18 @@
 <?php
+if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
+     die('You are not allowed to call this page directly.');
+}
 /**
- * The Template for displaying featured posts in a modal window.
+ * single-feature-modal.php - Modal window for single posts.
  *
  * @package Featured Content
  * @subpackage templates
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
  */
+
 global $more;
 ?>
 
