@@ -28,10 +28,16 @@ class featuredContentPlugin_Init {
           $this->pluginPath = WP_PLUGIN_DIR . '/' . basename(dirname(dirname(__FILE__)));
           $this->pluginURL = WP_PLUGIN_URL . '/' . basename(dirname(dirname(__FILE__)));
 
+          /* Wordpress Actions */
           add_action('init', array($this, 'create_post_type'));
-          add_filter('manage_edit-feature_columns', array(&$this, 'featured_content_edit_columns'));
           add_action('manage_pages_custom_column', array(&$this, 'featured_content_custom_columns'));
+
+          /* Wordpress Filters */
+          add_filter('manage_edit-feature_columns', array(&$this, 'featured_content_edit_columns'));
           add_filter('post_type_link', array($this, 'post_link'), 10, 3);
+          add_filter('index_template', array($this, 'index_template'), 10, 1);
+          add_filter('home_template', array($this, 'index_template'), 10, 1);
+          add_filter('archive_template', array($this, 'archive_template'), 10, 1);
      }
 
      /**
@@ -125,8 +131,8 @@ class featuredContentPlugin_Init {
           //build a rewrite rule from just the identifier if it is the first token
           preg_match('/%.+?%/', $permastructure['structure'], $tokens);
           if ( $tokens[0] == '%identifier%' ) {
-               $rewrite_rules = array_merge($wp_rewrite->generate_rewrite_rules($front . $permastructure['identifier'] . '/'), $rewrite_rules);
-               $rewrite_rules[$front . $permastructure['identifier'] . '/?$'] = 'index.php?paged=1';
+               $rewrite_rules = array_merge($wp_rewrite->generate_rewrite_rules($front . $this->options['index-slug'] . '/'), $rewrite_rules);
+               $rewrite_rules[$front . $this->options['index-slug'] . '/?$'] = 'index.php?paged=1';
           }
 
           foreach ( $rewrite_rules as $regex => $redirect ) {
@@ -145,6 +151,39 @@ class featuredContentPlugin_Init {
                $redirect = str_replace('name=', $type_query_var . '=', $redirect);
 
                add_rewrite_rule($regex, $redirect, 'top');
+          }
+     }
+
+     /**
+      * Handle index pages for the recipe post type.
+      *
+      * @global object $post
+      * @param string $template
+      * @return string
+      */
+     public function index_template($template) {
+          global $post;
+
+          if ( is_object($post) and $post->post_type == 'recipe' and $replacement_template = get_query_template('index-recipe') ) {
+               return $replacement_template;
+          } else {
+               return $template;
+          }
+     }
+
+     /**
+      * Handle archive pages for the recipe post type
+      *
+      * @global object $post
+      * @param string $template
+      * @return string
+      */
+     public function archive_template($template) {
+          global $post;
+          if ( is_object($post) and $post->post_type == 'recipe' and $replacement_template = get_query_template('archive-recipe') ) {
+               return $replacement_template;
+          } else {
+               return $template;
           }
      }
 

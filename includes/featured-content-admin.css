@@ -36,6 +36,16 @@ ul#featured_content_tabs {
      text-decoration: none;
 }
 
+
+#featured_content_tabs li.save-tab {
+     background-color: #666;
+     font-weight: bold;
+}
+
+#featured_content_tabs li.save-tab a {
+     color: #fff;
+}
+
 #featured_content_tabs li.featured-content-selected {
      background-color: #A2B6CB;
 }
@@ -110,4 +120,17 @@ th.meta-label {
 .form-table td.cp-wide-table {
      margin:0;
      padding:0;
+}
+
+div.featured-content-table {
+     min-height: 500px;
+}
+
+#featured_content_footer {
+     clear: both;
+     margin-top: 15px;
+}
+
+#featured_content_footer div.postbox {
+     min-height: 150px;
 }

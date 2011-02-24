@@ -14,8 +14,8 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  */
 ?>
 
-<div style="clear:both;">
-     <div class="postbox">
+<div id="featured_content_footer" class="featured-content-footer">
+     <div class="postbox" style="width:49%; float:left">
           <h3 class="handl" style="margin:0; padding:3px;cursor:default;"><?php _e('Credits', 'featured-content'); ?></h3>
           <div style="padding:8px;">
                <p>
@@ -26,8 +26,9 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
                     ); ?>
 
                     <?php
-                    printf(__('If you have questions about this plugin, please use our %1$s.', 'featured-content'),
-                            '<a href="http://support.grandslambert.com/forum/featured-content" target="_blank">' . __('Support Forum', 'featured-content') . '</a>'
+                    printf(__('If you have questions about this plugin, please use our %1$s or visit the %2$s.', 'featured-content'),
+                            '<a href="http://support.grandslambert.com/forum/featured-content" target="_blank">' . __('Support Forum', 'featured-content') . '</a>',
+                            '<a href="http://docs.grandslambert.com/wiki/Featured_Content" target="_blank">' . __('Documentation Page', 'featured-content') . '</a>'
                     ); ?>
                </p>
                <p>
@@ -41,7 +42,7 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
                </p>
           </div>
      </div>
-     <div class="postbox">
+     <div class="postbox" style="width:49%; float:right">
           <h3 class="handl" style="margin:0; padding:3px;cursor:default;"><?php _e('Donate', 'featured-content'); ?></h3>
           <div style="padding:8px">
                <p>

@@ -18,12 +18,12 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
      <h3 class="handl" style="margin:0;padding:3px;cursor:default;">
           <?php _e('Administration', 'featured-content'); ?>
      </h3>
-     <div class="table">
-          <table class="form-table cp-table">
+     <div class="table featured-content-table">
+          <table class="form-table">
                <tbody>
                     <tr align="top">
                          <th scope="row"><label for="featured_content_reset_options"><?php _e('Reset to default: ', 'featured-content'); ?></label></th>
-                         <td><input type="checkbox" id="featured_content_reset_options" name="confirm-reset-options" value="1" onclick="verifyResetOptions(this)" /></td>
+                         <td><input type="checkbox" id="featured_content_reset_options" name="confirm-reset-options" value="1" onclick="featured_content_reset(this)" /></td>
                     </tr>
                     <!--
                     <tr align="top">

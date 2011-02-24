@@ -5,7 +5,7 @@
   Plugin URI: http://plugins.grandslambert.com/plugins/featured-content.html
   Description: Creates an area to manage "featured content" that can be displayed throughout the web site, in widgets, and with theme functions.
   Author: GrandSlambert
-  Version: 0.2
+  Version: 0.3
   Author: GrandSlambert
   Author URI: http://www.grandslambert.com/
 
@@ -35,7 +35,7 @@ class featuredContentPlugin {
 
      var $menuName = 'featured-content-plugin';
      var $pluginName = 'Featured Content';
-     var $version = '0.2';
+     var $version = '0.3';
      var $optionsName = 'featured-content-options';
      var $xmlURL = 'http://grandslambert.com/xml/featured-content/';
      var $makeLink = false;
@@ -45,8 +45,7 @@ class featuredContentPlugin {
       */
      function featuredContentPlugin() {
           /* Load Langague Files */
-          $langDir = dirname(plugin_basename(__FILE__)) . '/lang';
-          load_plugin_textdomain('featured-content', false, $langDir, $langDir);
+          load_plugin_textdomain('featured-content', false, dirname(plugin_basename(__FILE__)) . '/lang');
 
           /* Plugin settings */
           $this->pluginName = __('Featured Content Plugin', 'featured-content');
@@ -61,17 +60,14 @@ class featuredContentPlugin {
           add_action('admin_menu', array(&$this, 'admin_menu'));
           add_filter('plugin_action_links', array(&$this, 'plugin_action_links'), 10, 2);
           add_action('admin_init', array(&$this, 'admin_init'));
-          add_filter('whitelist_options', array(&$this, 'whitelist_options'));
           add_action('update_option_' . $this->optionsName, array(&$this, 'update_option'), 10);
           add_action('query_vars', array(&$this, 'query_vars'));
           add_action('template_redirect', array(&$this, 'template_redirect'));
           add_action('right_now_content_table_end', array(&$this, 'right_now_content_table_end'));
 
           /* Add shortcodes */
-          if ( $this->options['shortcode-featured'] ) {
-               require_once($this->pluginPath . '/includes/shortcodes/featured.php');
-               add_shortcode('featured', 'featured_content_shortcode');
-          }
+          add_shortcode('featured', array(&$this, 'featured_content_shortcode'));
+          add_shortcode('featured-content', array(&$this, 'featured_content_shortcode'));
 
           /* Initialize the content type */
           $init = new featuredContentPlugin_Init($this->options);
@@ -87,6 +83,7 @@ class featuredContentPlugin {
 
           $defaults = array(
                /* Post Type Options */
+               'index-slug' => 'features',
                'identifier' => 'feature',
                'permalink' => '%identifier%' . get_option('permalink_structure'),
                'plural-name' => __('Features', 'featured-content'),
@@ -122,8 +119,6 @@ class featuredContentPlugin {
                'modal-duration' => 1,
                'modal-down-duration' => 1,
                'modal-up-duration' => 1,
-               /* Shortcode Functions */
-               'shortcode-featured' => true,
                /* Non-configurable settings */
                'menu-icon' => $this->pluginURL . '/images/featured.png',
           );
@@ -154,7 +149,6 @@ class featuredContentPlugin {
           $pages = array();
 
           $pages[] = add_submenu_page('edit.php?post_type=feature', 'Settings', 'Settings', 'edit_posts', $this->menuName, array(&$this, 'settings'));
-          $pages[] = add_submenu_page('edit.php?post_type=feature', 'Contributors', 'Contributors', 'edit_posts', 'featured-content-contributors', array(&$this, 'contributors'));
 
           foreach ( $pages as $page ) {
                add_action('admin_print_styles-' . $page, array(&$this, 'admin_styles'));
@@ -289,18 +283,36 @@ class featuredContentPlugin {
      }
 
      /**
-      * Add settings vars to the whitelist for forms.
-      *
-      * @param array $whitelist
-      * @return array
+      * Shortcode handler
+      * 
+      * @global object $post
+      * @param array $atts
       */
-     function whitelist_options($whitelist) {
-          if ( is_array($whitelist) ) {
-               $option_array = array($this->pluginName => $this->optionsName);
-               $whitelist = array_merge($whitelist, $option_array);
-          }
+     function featured_content_shortcode($atts) {
+          global $post;
+          $old_post = $post;
 
-          return $whitelist;
+          extract(shortcode_atts(array(
+                       'type' => 'images',
+                       'target' => 'modal',
+                       'limit' => 3,
+                       'sort' => 'post_title',
+                       'order' => 'asc',
+                       'words' => 20
+                          ), $atts));
+
+          $options = array(
+               'post_type' => 'feature',
+               'orderby' => $sort,
+               'order' => $order,
+               'numberposts' => $limit,
+          );
+
+          $features = new WP_query($options);
+
+          include($this->get_template('featured-shortcode-' . $type));
+
+          $post = $old_post;
      }
 
      /**

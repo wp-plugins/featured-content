@@ -1,5 +1,5 @@
 /**
- * featured-contetn.js - Placeholder for future javascript.
+ * featured-content.js - Placeholder for future javascript.
  *
  * @package Featured Content
  * @subpackage js

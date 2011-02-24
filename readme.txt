@@ -1,9 +1,9 @@
 === Featured Content ===
 Contributors: grandslambert
 Donate link: http://plugins.grandslambert.com/featured-content-donate
-Tags: content, sidebar, widget, featured image, modal window
+Tags: content, sidebar, widget, featured image, modal window, shortcode
 Requires at least: 3.0
-Tested up to: 3.0.3
+Tested up to: 3.1
 Stable tag: trunk
 
 Creates an area to manage "featured content" that can be displayed throughout the web site, in widgets, and with theme functions.
@@ -13,7 +13,7 @@ Creates an area to manage "featured content" that can be displayed throughout th
 Creates a custom post type for "featured content" which can be displayed in widgets and other parts of the
 site. Uses featured images and modal windows for displaying content.
 
-Features:
+= Features =
 
 * Creates a custom post type that supports all the features of standard posts.
 * Support for pretty permalinks on featured posts.
@@ -49,15 +49,28 @@ Support for this plugin is handled on our support forum at http://support.grands
 
 == Changelog ==
 
-= 0.2 =
+= 0.3 - February 24th, 2011 =
+
+* Changed how posts are looped in templates to use template tags.
+* Improved support for WordPress version 3.1.
+* Moved the shortcode function into core code to reduce load.
+* Added support for archive and index tempalte files for post type.
+* Added an index-slug for the permalinks for the list page.
+
+= 0.2 - February 10th, 2011 =
+
 * Fixed some code that was causing formatting issues on some themes.
 * Renamed several functions to avoid conflicts with other plugins.
 * Cleaned up code and added more comments.
 
-= 0.1 =
+= 0.1 - December 15h, 2010 =
+
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.3 =
+Includes updates to be compatible with WordPress 3.1 and other new features.
 
 = 0.2 =
 Update if you are having issues with sidebars breaking on your theme.

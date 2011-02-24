@@ -1,15 +1,15 @@
-# Translation of the WordPress plugin Featured Content 0.0.1 by GrandSlambert.
-# Copyright (C) 2010 GrandSlambert
+# Translation of the WordPress plugin Featured Content 0.3 by GrandSlambert.
+# Copyright (C) 2011 GrandSlambert
 # This file is distributed under the same license as the Featured Content package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Featured Content 0.0.1\n"
+"Project-Id-Version: Featured Content 0.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/featured-content\n"
-"POT-Creation-Date: 2010-12-15 11:30-0600\n"
-"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2011-02-24 16:47-0600\n"
+"PO-Revision-Date: 2011-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,392 +18,392 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: featured-content.php:48
+#: featured-content.php:51
 msgid "Featured Content Plugin"
 msgstr ""
 
-#: featured-content.php:77 includes/settings/features.php:18
-#: includes/settings.php:25
+#: featured-content.php:89 includes/settings/features.php:19
+#: includes/settings.php:26
 msgid "Features"
 msgstr ""
 
-#: featured-content.php:78
+#: featured-content.php:90
 msgid "Feature"
 msgstr ""
 
-#: featured-content.php:95
+#: featured-content.php:111
 msgid "Read More &rarr;"
 msgstr ""
 
-#. #-#-#-#-#  featured-content.pot (Featured Content 0.0.1)  #-#-#-#-#
+#. #-#-#-#-#  featured-content.pot (Featured Content 0.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: featured-content.php:96
+#: featured-content.php:112
 msgid "Featured Content"
 msgstr ""
 
-#: featured-content.php:102
+#: featured-content.php:116
 msgid "Please wait while we load the featured content"
 msgstr ""
 
-#: featured-content.php:103
+#: featured-content.php:117
 msgid "Close Content"
 msgstr ""
 
-#: featured-content.php:165
+#: featured-content.php:179
 msgid "Settings"
 msgstr ""
 
-#: featured-content.php:208
+#: featured-content.php:222
 msgid "Pending "
 msgid_plural "Pending "
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: Message displayed when the contributors list cannot be accessed.
-#: featured-content.php:403
+#: featured-content.php:466
 msgid "There was an error getting the list. Try again later."
 msgstr ""
 
 #. translators: Used on the Contributors list to denote what a person contributed.
-#: featured-content.php:424
+#: featured-content.php:487
 msgid "Contributed: "
 msgstr ""
 
-#: includes/contributors.php:15
-msgid "Contributors"
-msgstr ""
-
-#: includes/contributors.php:16
-msgid ""
-"This page includes a list of users who have contributed time or money to the "
-"development of this plugin."
-msgstr ""
-
-#: includes/contributors.php:20
-msgid "Major Contributors"
-msgstr ""
-
-#: includes/contributors.php:26
-msgid "Additional Contributors"
-msgstr ""
-
-#: includes/footer.php:18
+#: includes/footer.php:19
 msgid "Credits"
 msgstr ""
 
-#: includes/footer.php:22
+#: includes/footer.php:23
 #, php-format
 msgid ""
 "Thank you for trying the %1$s plugin - I hope you find it useful. For the "
 "latest updates on this plugin, vist the %2$s."
 msgstr ""
 
-#: includes/footer.php:24
+#: includes/footer.php:25
 msgid "official site"
 msgstr ""
 
-#: includes/footer.php:28
+#: includes/footer.php:29
 #, php-format
-msgid "If you have questions about this plugin, please use our %1$s."
+msgid ""
+"If you have questions about this plugin, please use our %1$s or visit the "
+"%2$s."
 msgstr ""
 
-#: includes/footer.php:29
+#: includes/footer.php:30
 msgid "Support Forum"
 msgstr ""
 
-#: includes/footer.php:34
+#: includes/footer.php:31 includes/sidebar-boxes.php:37
+msgid "Documentation Page"
+msgstr ""
+
+#: includes/footer.php:36
 #, php-format
 msgid "This plugin is &copy; %1$s by %2$s and is released under the %3$s"
 msgstr ""
 
-#: includes/footer.php:37
+#: includes/footer.php:39
 msgid "GNU General Public License"
 msgstr ""
 
-#: includes/footer.php:44
+#: includes/footer.php:46
 msgid "Donate"
 msgstr ""
 
-#: includes/footer.php:47
+#: includes/footer.php:49
 #, php-format
 msgid ""
 "If you find this plugin useful, please consider supporting this and our "
 "other great %1$s."
 msgstr ""
 
-#: includes/footer.php:47
+#: includes/footer.php:49
 msgid "plugins"
 msgstr ""
 
-#: includes/footer.php:48
+#: includes/footer.php:50
 msgid "Donate a few bucks!"
 msgstr ""
 
-#: includes/initialize.php:45
-msgid "Add New"
-msgstr ""
-
-#: includes/initialize.php:46
-#, php-format
-msgid "Add New %1$s"
-msgstr ""
-
-#: includes/initialize.php:47
-#, php-format
-msgid "Edit %1$s"
-msgstr ""
-
-#: includes/initialize.php:48
-msgid "Edit"
-msgstr ""
-
-#: includes/initialize.php:49
-#, php-format
-msgid "New %1$s"
-msgstr ""
-
-#: includes/initialize.php:50 includes/initialize.php:54
-#, php-format
-msgid "View %1$s"
-msgstr ""
-
-#: includes/initialize.php:51
-#, php-format
-msgid "Search %1$s"
-msgstr ""
-
 #: includes/initialize.php:52
-#, php-format
-msgid "No %1$s found"
+msgid "Add New"
 msgstr ""
 
 #: includes/initialize.php:53
 #, php-format
+msgid "Add New %1$s"
+msgstr ""
+
+#: includes/initialize.php:54
+#, php-format
+msgid "Edit %1$s"
+msgstr ""
+
+#: includes/initialize.php:55
+msgid "Edit"
+msgstr ""
+
+#: includes/initialize.php:56
+#, php-format
+msgid "New %1$s"
+msgstr ""
+
+#: includes/initialize.php:57 includes/initialize.php:61
+#, php-format
+msgid "View %1$s"
+msgstr ""
+
+#: includes/initialize.php:58
+#, php-format
+msgid "Search %1$s"
+msgstr ""
+
+#: includes/initialize.php:59
+#, php-format
+msgid "No %1$s found"
+msgstr ""
+
+#: includes/initialize.php:60
+#, php-format
 msgid "No %1$s found in Trash"
 msgstr ""
 
-#: includes/settings/administration.php:18 includes/settings.php:28
+#: includes/initialize.php:73
+msgid "Post type created by Featured Content plugin."
+msgstr ""
+
+#: includes/settings/administration.php:19 includes/settings.php:29
 msgid "Administration"
 msgstr ""
 
-#: includes/settings/administration.php:24
+#: includes/settings/administration.php:25
 msgid "Reset to default: "
 msgstr ""
 
-#: includes/settings/administration.php:29
+#: includes/settings/administration.php:30
 msgid "Back-up Options: "
 msgstr ""
 
-#: includes/settings/administration.php:33
+#: includes/settings/administration.php:34
 msgid "Restore Options: "
 msgstr ""
 
-#: includes/settings/features.php:24
-msgid "Identifier"
-msgstr ""
-
-#: includes/settings/features.php:26
-msgid "Set the URL identifier for use in URLs."
+#: includes/settings/features.php:25
+msgid "Index Slug"
 msgstr ""
 
 #: includes/settings/features.php:27
+msgid "Set the URL slug for use in content."
+msgstr ""
+
+#: includes/settings/features.php:28
 msgid "View on Site"
 msgstr ""
 
-#: includes/settings/features.php:31
+#: includes/settings/features.php:32
+msgid "Identifier"
+msgstr ""
+
+#: includes/settings/features.php:34
+msgid "Set the URL identifier for use in URLs."
+msgstr ""
+
+#: includes/settings/features.php:38
 msgid "Permalink Structure"
 msgstr ""
 
-#: includes/settings/features.php:33
+#: includes/settings/features.php:40
 msgid "Set the permalink structure for viewing posts."
 msgstr ""
 
-#: includes/settings/features.php:39
+#: includes/settings/features.php:46
 #, php-format
 msgid ""
 "This will be the custom URL structure for your featured content. These "
 "follow WP's normal %1$s, but must also include the content type '%2$s'.</p>"
 msgstr ""
 
-#: includes/settings/features.php:40
+#: includes/settings/features.php:47 includes/sidebar-boxes.php:24
 msgid "permalink tags"
 msgstr ""
 
-#: includes/settings/features.php:44
+#: includes/settings/features.php:51
 msgid ""
 "Allowed tags: %year%, %monthnum%, %day%, %hour%, %minute%, %second%, "
 "%postname%, %post_id%."
 msgstr ""
 
-#: includes/settings/features.php:48
+#: includes/settings/features.php:55
 msgid "Plural Name"
 msgstr ""
 
-#: includes/settings/features.php:50
+#: includes/settings/features.php:57
 msgid "Set the plural name for use in menus."
 msgstr ""
 
-#: includes/settings/features.php:54
+#: includes/settings/features.php:61
 msgid "Singular Name"
 msgstr ""
 
-#: includes/settings/features.php:56
+#: includes/settings/features.php:63
 msgid "Set the singular name for use in menus."
 msgstr ""
 
-#: includes/settings/features.php:60
+#: includes/settings/features.php:67
 msgid "Enable the following features"
 msgstr ""
 
-#: includes/settings/features.php:66
+#: includes/settings/features.php:73
 msgid ""
 "Turn on the featured images of WordPress 3.0 to enable thumbnail images for "
 "featured content."
 msgstr ""
 
-#: includes/settings/features.php:66
+#: includes/settings/features.php:73
 msgid "Thumbnails"
 msgstr ""
 
-#: includes/settings/features.php:67
+#: includes/settings/features.php:74
 msgid "Enable the post categories and tabs for featured content."
 msgstr ""
 
-#: includes/settings/features.php:67
+#: includes/settings/features.php:74
 msgid "Taxonomies"
 msgstr ""
 
-#: includes/settings/features.php:68
+#: includes/settings/features.php:75
 msgid "Enable the use of custom fields for featured content."
 msgstr ""
 
-#: includes/settings/features.php:68
+#: includes/settings/features.php:75
 msgid "Custom Fields"
 msgstr ""
 
-#: includes/settings/features.php:71
+#: includes/settings/features.php:78
 msgid "Enable WordPress comments for featured content."
 msgstr ""
 
-#: includes/settings/features.php:71
+#: includes/settings/features.php:78
 msgid "Comments"
 msgstr ""
 
-#: includes/settings/features.php:72
+#: includes/settings/features.php:79
 msgid "Enable WordPress trackbacks for featured content."
 msgstr ""
 
-#: includes/settings/features.php:72
+#: includes/settings/features.php:79
 msgid "Trackbacks"
 msgstr ""
 
-#: includes/settings/features.php:73
+#: includes/settings/features.php:80
 msgid "Enable WordPress revisions for featured content."
 msgstr ""
 
-#: includes/settings/features.php:73
+#: includes/settings/features.php:80
 msgid "Revisions"
 msgstr ""
 
-#: includes/settings/modal.php:18 includes/settings.php:27
+#: includes/settings/modal.php:19 includes/settings.php:28
 msgid "Modal Boxes"
 msgstr ""
 
-#: includes/settings/modal.php:22 includes/widgets/list-form.php:47
+#: includes/settings/modal.php:24 includes/widgets/list-form.php:48
 msgid "Title"
 msgstr ""
 
-#: includes/settings/modal.php:23
+#: includes/settings/modal.php:25
 msgid "Set the default title for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:26
+#: includes/settings/modal.php:28
 msgid "Width"
 msgstr ""
 
-#: includes/settings/modal.php:27
+#: includes/settings/modal.php:29
 msgid "Set the default width for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:30
+#: includes/settings/modal.php:32
 msgid "Height"
 msgstr ""
 
-#: includes/settings/modal.php:31
+#: includes/settings/modal.php:33
 msgid "Set the default height for the modal box. Enter -1 to use auto height."
 msgstr ""
 
-#: includes/settings/modal.php:34
+#: includes/settings/modal.php:36
 msgid "Loading Text"
 msgstr ""
 
-#: includes/settings/modal.php:35 includes/settings/modal.php:39
+#: includes/settings/modal.php:37 includes/settings/modal.php:41
 msgid "Set the default loading text for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:38
+#: includes/settings/modal.php:40
 msgid "Read More Text"
 msgstr ""
 
-#: includes/settings/modal.php:42
+#: includes/settings/modal.php:44
 msgid "Close Text"
 msgstr ""
 
-#: includes/settings/modal.php:43
+#: includes/settings/modal.php:45
 msgid "Set the default close text for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:46
+#: includes/settings/modal.php:48
 msgid "Close on overlay click"
 msgstr ""
 
-#: includes/settings/modal.php:47
+#: includes/settings/modal.php:49
 msgid ""
 "If checked, modal window will close when viewer clicks anywhere on the "
 "overlay"
 msgstr ""
 
-#: includes/settings/modal.php:50
+#: includes/settings/modal.php:52
 msgid "Overlay Opacity"
 msgstr ""
 
-#: includes/settings/modal.php:52
+#: includes/settings/modal.php:54
 msgid "Set the default overlay opacity (between 0 and 1) for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:53
+#: includes/settings/modal.php:55
 msgid "Must be a decimal value between 0 and 1 only!"
 msgstr ""
 
-#: includes/settings/modal.php:57
+#: includes/settings/modal.php:59
 msgid "Overlay Duration"
 msgstr ""
 
-#: includes/settings/modal.php:58
+#: includes/settings/modal.php:60
 msgid "Set the default overlay duration in seconds for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:61
+#: includes/settings/modal.php:63
 msgid "Down Duration"
 msgstr ""
 
-#: includes/settings/modal.php:62
+#: includes/settings/modal.php:64
 msgid "Set the default down in seconds for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:65
+#: includes/settings/modal.php:67
 msgid "Up Duration"
 msgstr ""
 
-#: includes/settings/modal.php:66
+#: includes/settings/modal.php:68
 msgid "Set the default up duration in seconds for the modal box."
 msgstr ""
 
-#: includes/settings/modal.php:81
+#: includes/settings/modal.php:83
 msgid "Show Example"
 msgstr ""
 
-#: includes/settings.php:26 includes/settings/widget.php:18
+#: includes/settings.php:27 includes/settings/widget.php:19
 msgid "Widget Defaults"
 msgstr ""
 
@@ -419,117 +419,167 @@ msgstr ""
 msgid "Featured Content Settings Saved."
 msgstr ""
 
-#: includes/settings.php:78
+#: includes/settings.php:56
 msgid "Save Settings"
 msgstr ""
 
-#: includes/settings/widget.php:22
+#: includes/settings/widget.php:24
 msgid "Default Posts to Display"
 msgstr ""
 
-#: includes/settings/widget.php:32
+#: includes/settings/widget.php:34
 msgid "Widget Type"
 msgstr ""
 
-#: includes/settings/widget.php:35 includes/widgets/list-form.php:35
+#: includes/settings/widget.php:37 includes/widgets/list-form.php:36
 msgid "Use Featured Image"
 msgstr ""
 
-#: includes/settings/widget.php:36
+#: includes/settings/widget.php:38
 msgid "Display text"
 msgstr ""
 
-#: includes/settings/widget.php:41
+#: includes/settings/widget.php:43
 msgid " Link Target"
 msgstr ""
 
-#: includes/widgets/list-form.php:17
+#: includes/sidebar-boxes.php:19
+msgid "Permalink Instructions"
+msgstr ""
+
+#: includes/sidebar-boxes.php:23
+#, php-format
+msgid ""
+"The permalink structure will be used to create the custom URL structure for "
+"your individual recipes. These follow WP's normal %1$s, but must also "
+"include the content type %2$s and at least one of these unique tags: %3$s or "
+"%4$s."
+msgstr ""
+
+#: includes/sidebar-boxes.php:32
+msgid ""
+"Allowed tags: %year%, %monthnum%, %day%, %hour%, %minute%, %second%, "
+"%postname%, %post_id%"
+msgstr ""
+
+#: includes/sidebar-boxes.php:36
+#, php-format
+msgid ""
+"For complete instructions on how to set up your permaliks, visit the %1$s."
+msgstr ""
+
+#: includes/sidebar-boxes.php:45
+msgid "Modal Box Settings"
+msgstr ""
+
+#: includes/sidebar-boxes.php:48
+msgid ""
+"The settings on the Modal Boxes tab affect the modal boxes opened by the "
+"shortcode and the widget. You can see how your box will display by clicking "
+"on the \"Show Example\" link at the bottom of the box."
+msgstr ""
+
+#: includes/sidebar-boxes.php:51
+#, php-format
+msgid ""
+"To create the modal boxes, this plugin uses the %1$s javascript code by %2$s."
+msgstr ""
+
+#: includes/sidebar-boxes.php:52
+msgid "ModalBox"
+msgstr ""
+
+#: includes/sidebar-boxes.php:60
+msgid "Contributors"
+msgstr ""
+
+#: includes/widgets/list-form.php:18
 msgid "Widget Title (optional):"
 msgstr ""
 
-#: includes/widgets/list-form.php:21
+#: includes/widgets/list-form.php:22
 msgid "How many items would you like to display?"
 msgstr ""
 
-#: includes/widgets/list-form.php:23
+#: includes/widgets/list-form.php:24
 msgid "Always use default"
 msgstr ""
 
-#: includes/widgets/list-form.php:30
+#: includes/widgets/list-form.php:31
 msgid "Hide Current Post?"
 msgstr ""
 
-#: includes/widgets/list-form.php:33
+#: includes/widgets/list-form.php:34
 msgid "Display Type:"
 msgstr ""
 
-#: includes/widgets/list-form.php:36
+#: includes/widgets/list-form.php:37
 msgid "Display Titles"
 msgstr ""
 
-#: includes/widgets/list-form.php:37
+#: includes/widgets/list-form.php:38
 msgid "Display Excerpts"
 msgstr ""
 
-#: includes/widgets/list-form.php:41
+#: includes/widgets/list-form.php:42
 msgid "Length of Excerpt:"
 msgstr ""
 
-#: includes/widgets/list-form.php:42
+#: includes/widgets/list-form.php:43
 msgid "words"
 msgstr ""
 
-#: includes/widgets/list-form.php:45 includes/widgets/list-form.php:53
+#: includes/widgets/list-form.php:46 includes/widgets/list-form.php:54
 msgid "Sort Order:"
 msgstr ""
 
-#: includes/widgets/list-form.php:48
+#: includes/widgets/list-form.php:49
 msgid "Newest"
 msgstr ""
 
-#: includes/widgets/list-form.php:49
+#: includes/widgets/list-form.php:50
 msgid "Random"
 msgstr ""
 
-#: includes/widgets/list-form.php:55
+#: includes/widgets/list-form.php:56
 msgid "Ascending"
 msgstr ""
 
-#: includes/widgets/list-form.php:56
+#: includes/widgets/list-form.php:57
 msgid "Descending"
 msgstr ""
 
-#: includes/widgets/list-form.php:60
+#: includes/widgets/list-form.php:61
 msgid "Link Target:"
 msgstr ""
 
-#: includes/widgets/list-form.php:63
+#: includes/widgets/list-form.php:64
 msgid "Modal Window"
 msgstr ""
 
-#: includes/widgets/list-form.php:64
+#: includes/widgets/list-form.php:65
 msgid "New Window"
 msgstr ""
 
-#: includes/widgets/list-form.php:65
+#: includes/widgets/list-form.php:66
 msgid "Display Page"
 msgstr ""
 
 #. translators: The description of the Featured Content widget on the Appearance->Widgets page.
-#: includes/widgets/list-widget.php:27
+#: includes/widgets/list-widget.php:28
 msgid "List featured content on your sidebar. By GrandSlambert."
 msgstr ""
 
 #. translators: The title for the Recipe List widget.
-#: includes/widgets/list-widget.php:29
+#: includes/widgets/list-widget.php:30
 msgid "Featured Content &raquo; List"
 msgstr ""
 
-#: templates/single-feature-modal.php:25
+#: templates/single-feature-modal.php:33
 msgid "Pages:"
 msgstr ""
 
-#: templates/single-feature-modal.php:29
+#: templates/single-feature-modal.php:37
 msgid "Close Window"
 msgstr ""
 

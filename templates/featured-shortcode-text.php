@@ -14,16 +14,17 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  */
 ?>
 
-<?php if ( count($features) ) : ?>
+<?php if ( $features->have_posts() ) : ?>
      <ul class="featured-content-shortcode-list">
 
-     <?php foreach ( $features as $feature ) : ?>
+     <?php while ($features->have_posts()) :
+          $features->the_post(); ?>
 
           <li class="featured-content-shortcode-item">
-               <a href="<?php echo get_post_permalink($feature); ?>"><?php echo $feature->post_title; ?></a><br>
-          <?php echo $featuredContentPlugin->trim_excerpt($feature->post_content, $words); ?>
+               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+          <?php echo $this->trim_excerpt(get_the_content(), $words); ?>
      </li>
 
-     <?php endforeach; ?>
+     <?php endwhile; ?>
      </ul>
 <?php endif; ?>

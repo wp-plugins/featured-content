@@ -13,21 +13,20 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
  * @access public
  * @since 0.1
  */
-if ( count($features) ) {
-     foreach ( $features as $feature ) {
-          setup_postdata($feature); /* Does not seem to work! */
+if ( $features->have_posts() ) : while ($features->have_posts()) {
+          $features->the_post();
 
           if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
                /* These are the settings for the image. */
                $settings = array(
                     'class' => 'featured-content-shortcode-image',
-                    'alt' => get_the_title($feature),
-                    'title' => get_the_title($feature),
+                    'alt' => get_the_title(),
+                    'title' => get_the_title(),
                );
 
                switch ($target) {
                     case 'modal':
-                         $settings['onclick'] = $featuredContentPlugin->get_modal_code($feature);
+                         $settings['onclick'] = $this->get_modal_code($post);
                          the_post_thumbnail('featured-content-shortcode-image', $settings);
                          break;
                     default:
@@ -37,4 +36,6 @@ if ( count($features) ) {
                }
           }
      }
-}
+     
+?>
+<?php endif; ?>

@@ -23,7 +23,7 @@ function featured_content_show_tab(tab) {
 }
 
 /* Function to verify selection to reset options */
-function verifyResetOptions(element) {
+function featured_content_reset(element) {
      if (element.checked) {
           if (prompt('Are you sure you want to reset all of your options? To confirm, type the word "reset" into the box.') == 'reset' ) {
                document.getElementById('featured_content_settings').submit();
@@ -31,4 +31,9 @@ function verifyResetOptions(element) {
                element.checked = false;
           }
      }
+}
+
+/* Function to submit the changes on the settings page. */
+function featured_content_settings_save() {
+     document.getElementById('featured_content_settings').submit();
 }

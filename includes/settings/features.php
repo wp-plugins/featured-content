@@ -18,14 +18,20 @@ if ( preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF']) ) {
      <h3 class="handl" style="margin:0;padding:3px;cursor:default;">
           <?php _e('Features', 'featured-content'); ?>
      </h3>
-     <div class="table">
-          <table class="form-table cp-table">
+     <div class="table featured-content-table">
+          <table class="form-table">
                <tbody>
+                    <tr align="top">
+                         <th scope="row"><label for="featured_content_index_slug"><?php _e('Index Slug', 'featured-content'); ?></label></th>
+                         <td>
+                              <input title="<?php _e('Set the URL slug for use in content.', 'featured-content'); ?>" class="input" type="text" name="<?php echo $this->optionsName; ?>[index-slug]" id="featured_content_index_slug" value="<?php echo $this->options['index-slug']; ?>" />
+                              <a href="<?php echo get_option('home'); ?>/<?php echo $this->options['index-slug']; ?>"><?php _e('View on Site', 'featured-content'); ?></a>
+                         </td>
+                    </tr>
                     <tr align="top">
                          <th scope="row"><label for="featured_content_identifier"><?php _e('Identifier', 'featured-content'); ?></label></th>
                          <td>
                               <input title="<?php _e('Set the URL identifier for use in URLs.', 'featured-content'); ?>" class="input" type="text" name="<?php echo $this->optionsName; ?>[identifier]" id="featured_content_identifier" value="<?php echo $this->options['identifier']; ?>" />
-                              <a href="<?php echo get_option('home'); ?>/<?php echo $this->options['identifier']; ?>"><?php _e('View on Site', 'featured-content'); ?></a>
                          </td>
                     </tr>
                     <tr align="top" class="no-border">
