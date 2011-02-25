@@ -5,7 +5,7 @@
   Plugin URI: http://plugins.grandslambert.com/plugins/featured-content.html
   Description: Creates an area to manage "featured content" that can be displayed throughout the web site, in widgets, and with theme functions.
   Author: GrandSlambert
-  Version: 0.3
+  Version: 0.3.1
   Author: GrandSlambert
   Author URI: http://www.grandslambert.com/
 
@@ -35,7 +35,7 @@ class featuredContentPlugin {
 
      var $menuName = 'featured-content-plugin';
      var $pluginName = 'Featured Content';
-     var $version = '0.3';
+     var $version = '0.3.1';
      var $optionsName = 'featured-content-options';
      var $xmlURL = 'http://grandslambert.com/xml/featured-content/';
      var $makeLink = false;
@@ -310,9 +310,14 @@ class featuredContentPlugin {
 
           $features = new WP_query($options);
 
+          ob_start();
           include($this->get_template('featured-shortcode-' . $type));
+          $content = ob_get_contents();
+          ob_end_clean();
 
           $post = $old_post;
+
+          return $content;
      }
 
      /**

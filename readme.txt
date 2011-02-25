@@ -49,6 +49,10 @@ Support for this plugin is handled on our support forum at http://support.grands
 
 == Changelog ==
 
+= 0.3.1 - February 25th, 2011 =
+
+* Fixed an issue where the shortcode displayed content in the wrong place.
+
 = 0.3 - February 24th, 2011 =
 
 * Changed how posts are looped in templates to use template tags.
